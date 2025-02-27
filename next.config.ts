@@ -224,6 +224,7 @@ const withBundleAnalyzer = process.env.ANALYZE === 'true' ? analyzer() : noWrapp
 
 const withPWA = isProd
   ? withSerwistInit({
+      maximumFileSizeToCacheInBytes: 50 * 1024 * 1024, // 50 MB
       register: false,
       swDest: 'public/sw.js',
       swSrc: 'src/app/sw.ts',
